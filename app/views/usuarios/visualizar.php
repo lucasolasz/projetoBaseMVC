@@ -36,7 +36,7 @@
                                 <td>
                                     <a href="<?= URL . 'Usuarios/editarUsuario/' . $usuarios->id_usuario ?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Editar</a>
 
-                                    <a href="<?= URL . 'Usuarios/deletarUsuario/$usuarios->id_usuario' ?>" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Exlcuir</a>
+                                    <a href="<?= URL . 'Usuarios/deletarUsuario/' . $usuarios->id_usuario ?>" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Exlcuir</a>
                                 </td>
                             <?php  } ?>
                     </tbody>
