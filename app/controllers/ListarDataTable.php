@@ -6,6 +6,8 @@ class ListarDataTable extends Controller
     //Construtor do model do Usuário que fará o acesso ao banco
     public function __construct()
     {
+        $this->verificaSeEstaLogado();
+
         $this->model = $this->model("DataTablesModel");
     }
 

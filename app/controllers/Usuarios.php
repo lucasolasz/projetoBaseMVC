@@ -45,7 +45,7 @@ class Usuarios extends Controller
                 if (empty($formulario['txtNome'])) {
                     $dados['nome_erro'] = "Preencha o Nome";
                 }
-                if(empty($formulario["txtSobreNome"])) {
+                if (empty($formulario["txtSobreNome"])) {
                     $dados["txtSobreNome"] = "Preencha o sobrenome";
                 }
                 if (empty($formulario['txtEmail'])) {
@@ -84,7 +84,7 @@ class Usuarios extends Controller
 
                         //Para exibir mensagem success , não precisa informar o tipo de classe
                         Alertas::mensagem('usuario', 'Usuário cadastrado com sucesso');
-                        Redirecionamento::redirecionar('usuarios/visualizarUsuarios');
+                        Redirecionamento::redirecionar('Usuarios/visualizarUsuarios');
                     } else {
                         die("Erro ao armazenar usuário no banco de dados");
                     }
@@ -176,7 +176,7 @@ class Usuarios extends Controller
         $_SESSION['fk_cargo'] = $usuario->fk_cargo;
         $_SESSION['fk_tipo_usuario'] = $usuario->fk_tipo_usuario;
 
-        Redirecionamento::redirecionar('paginas/home');
+        Redirecionamento::redirecionar('Paginas/home');
     }
 
 
@@ -191,12 +191,12 @@ class Usuarios extends Controller
 
         session_destroy();
 
-        Redirecionamento::redirecionar('usuarios/login');
+        Redirecionamento::redirecionar('Usuarios/login');
     }
 
     public function visualizarUsuarios()
     {
-        $usuarios =  $this->model->visualizarUsuarios();
+        $usuarios = $this->model->visualizarUsuarios();
 
         $dados = [
             'usuarios' => $usuarios,
@@ -234,7 +234,7 @@ class Usuarios extends Controller
             if (empty($formulario['txtNome'])) {
                 $dados['nome_erro'] = "Preencha o Nome";
             }
-            if(empty($formulario["txtSobreNome"])) {
+            if (empty($formulario["txtSobreNome"])) {
                 $dados["txtSobreNome"] = "Preencha o sobrenome";
             }
             if (empty($formulario['txtEmail'])) {

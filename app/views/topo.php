@@ -6,29 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
 
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap -->
 
-    <link href="<?php echo URL .'public/css/estilos.css' ?>" rel="stylesheet">
-    <script src="<?php echo URL .'public/js/jquery.funcoes.js' ?>"></script>
-
-    <!-- DataTables -->
+    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
-    <script src="https://cdn.datatables.net/plug-ins/1.13.5/i18n/pt-BR.json"></script>
-    <!-- DataTables -->
 
-    <title>
-        <?php echo APP_NOME ?>
-    </title>
+    <!-- Custom Styles -->
+    <link href="<?php echo URL . 'public/css/estilos.css' ?>" rel="stylesheet">
+
+    <title><?php echo APP_NOME; ?></title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="<?php echo URL . 'public/js/jquery.funcoes.js' ?>"></script>
 </head>
 
 <body>
@@ -41,7 +44,9 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="<?= URL ?>"><?= APP_NOME ?></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -51,9 +56,11 @@
                             </li>
                             <?php if (isset($_SESSION['id_usuario'])) { ?>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cadastro</a>
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                        aria-expanded="false">Cadastro</a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" aria-current="page" href="<?= URL . 'Usuarios/visualizarUsuarios' ?>">Usuário</a></li>
+                                        <li><a class="dropdown-item" aria-current="page"
+                                                href="<?= URL . 'Usuarios/visualizarUsuarios' ?>">Usuário</a></li>
                                     </ul>
                                 </li>
                             <?php } ?>
@@ -62,18 +69,19 @@
                             </li>
                         </ul>
                         <div class="d-flex align-items-center">
-                        <?php if (isset($_SESSION['id_usuario'])) { ?>
-                            <div class="me-2" style="width: 300px;">
-                                <p class="mb-0">Olá, <?= ucfirst($_SESSION['ds_nome_usuario']); ?>, Seja bem vindo(a)</p>
-                            </div>
-                            <div>
-                                <a class="btn btn-sm btn-danger" href="<?= URL . 'Usuarios/sair' ?>">Sair</a>
-                            </div>
-                        <?php } else { ?>
-                            <div style="width: 30px">
-                                <a class="btn btn-primary" href="<?= URL . 'Usuarios/login' ?>">Entrar</a>
-                            </div>
-                        <?php } ?>
+                            <?php if (isset($_SESSION['id_usuario'])) { ?>
+                                <div class="me-2" style="width: 300px;">
+                                    <p class="mb-0">Olá, <?= ucfirst($_SESSION['ds_nome_usuario']); ?>, Seja bem vindo(a)
+                                    </p>
+                                </div>
+                                <div>
+                                    <a class="btn btn-sm btn-danger" href="<?= URL . 'Usuarios/sair' ?>">Sair</a>
+                                </div>
+                            <?php } else { ?>
+                                <div style="width: 30px">
+                                    <a class="btn btn-primary" href="<?= URL . 'Usuarios/login' ?>">Entrar</a>
+                                </div>
+                            <?php } ?>
                         </div>
 
                     </div>
